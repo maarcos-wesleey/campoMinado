@@ -6,7 +6,7 @@ const params = {
     fontSize: 15,
     headerRatio: 0.15,
     difficultLevel: 0.1,
-    getCalumnsAmount() {
+    getColumnsAmount() {
         const width = Dimensions.get('window').width
         return Math.floor(width / this.blockSize)
     },

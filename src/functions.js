@@ -4,7 +4,7 @@ const createBoard = (rows, columns) => {
             return{
                 row,
                 column,
-                opener: false,
+                opened: false,
                 flagged: false,
                 mined: false,
                 exploded: false,
@@ -30,10 +30,10 @@ const spreadMines = (board, minesAmount) => {
     }
 }
 
-const createMinesBoard = (rows, columns, minesAmount) => {
+const createMinedBoard = (rows, columns, minesAmount) => {
     const board = createBoard(rows, columns)
     spreadMines(board, minesAmount)
     return board
 }
 
-export default {createMinesBoard}
+export { createMinedBoard }

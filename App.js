@@ -12,13 +12,13 @@ export default class App extends Component {
   }
 
   minesAmount = () => {
-    const cols = params.getCalumnsAmount()
+    const cols = params.getColumnsAmount()
     const rows = params.getRowsAmount()
     return Math.ceil(cols * rows * params.difficultLevel)
   }
 
   createState = () => {
-    const cols = params.getCalumnsAmount()
+    const cols = params.getColumnsAmount()
     const rows = params.getRowsAmount()
     return{
       board: createMinedBoard(rows, cols, this.minesAmount()),
@@ -30,11 +30,8 @@ export default class App extends Component {
       <View style={styles.container}>
         <Text style={styles.welcome}>Iniciando o Mines!</Text>
         <Text style={styles.instructions}>
-          Tamanho da grade: 
-          {params.getRowsAmount()}x{params.getCalumnsAmount()}
-        </Text>
-
-        <View styles={styles.board}>
+          {params.getRowsAmount()}x{params.getColumnsAmount()}</Text>
+        <View style={styles.board}>
           <MineField board={this.state.board} />
         </View>
       </View>
